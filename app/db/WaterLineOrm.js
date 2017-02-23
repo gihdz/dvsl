@@ -11,7 +11,7 @@ var orm = new Waterline();
 // Require any waterline compatible adapters here
 // var diskAdapter = require('sails-disk')
 var pgAdapter = require('sails-postgresql');
-   let {DATABASE_URL, POSTGRES_DB, DB_USER, DB_PASSWORD, DB_PORT, DB_SSL} = process.env;
+   let {DATABASE_URL, DB_SSL} = process.env;
    
 // Build A Config Object
 export let config = {
@@ -31,13 +31,7 @@ export let config = {
   connections: {
     myLocalPostgreSQL: {
       adapter: 'postgresql',
-      host: DATABASE_URL,
-      database: POSTGRES_DB,      
-      user: DB_USER,
-      password: DB_PASSWORD,
-      port: parseInt(DB_PORT),
-      poolSize: 10,
-      ssl: DB_SSL === 'true'
+      url: DATABASE_URL
     }
   },
 
@@ -94,7 +88,7 @@ var Pet = Waterline.Collection.extend({
 // Load the Models into the ORM
 orm.loadCollection(User);
 orm.loadCollection(Pet);
-orm.loadCollection(Contract);
+// orm.loadCollection(Contract);
 
 
 export default orm;
