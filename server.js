@@ -8,6 +8,7 @@ let {SERVER_PORT} = process.env;
 
 // Setting routes
 app.use(appRoutes);
+
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
