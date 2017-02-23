@@ -17,5 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
+app.use(express.static('./client/build'));
 
 export default app;

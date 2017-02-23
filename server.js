@@ -1,12 +1,16 @@
 import app from './app';
 import appRoutes from './app/controllers';    
 import orm, {config} from './app/db/WaterLineOrm';
+import path from 'path';
+
 let {SERVER_PORT} = process.env;
 
 
 // Setting routes
 app.use(appRoutes);
-
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+});
 
 // Start Waterline passing adapters in
 orm.initialize(config, function(err, models) {

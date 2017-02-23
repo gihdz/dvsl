@@ -41,7 +41,7 @@ class Service{
     MakeRequest(method, config){
         let route = method;
         let configReq = config || getConfig();
-        if(configReq.method !== 'get') config.headers['Content-Type'] = 'application/json';
+        if(configReq.method !== 'get') configReq.headers['Content-Type'] = 'application/json';
 //         ReactStormpath.getAccessToken()
 //         .then((accessToken) => {
 //       configReq.headers['Authorization'] = 'Bearer ' + accessToken
