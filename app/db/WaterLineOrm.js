@@ -7,7 +7,7 @@ var orm = new Waterline();
 //////////////////////////////////////////////////////////////////
 // WATERLINE CONFIG
 //////////////////////////////////////////////////////////////////
-
+let migrate = process.env.NODE_ENV === "production" ? "safe" : "alter";
 // Require any waterline compatible adapters here
 // var diskAdapter = require('sails-disk')
 var pgAdapter = require('sails-postgresql');
@@ -36,7 +36,7 @@ export let config = {
   },
 
   defaults: {
-    migrate: 'alter'
+    migrate: migrate
   }
 
 };
