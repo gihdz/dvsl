@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.babel.js",
+    "start": "node app.babel.js",
+    "dev": "nodemon app.babel.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
