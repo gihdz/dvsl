@@ -32,11 +32,11 @@ router.delete('/users', function(req, res) {
   // res.json({body: req.body});
 });
 
-router.get('/contracts', (req, res) => {
- app.models.contracts.find().exec(function(err, models) {
-    if(err) return res.json({ err: err }, 500);
-    res.json(models);
-     });
-});
+// router.get('/contracts', (req, res) => {
+//  app.models.contracts.find().exec(function(err, models) {
+//     if(err) return res.json({ err: err }, 500);
+//     res.json(models);
+//      });
+// });
 
 export default router;
