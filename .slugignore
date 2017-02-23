@@ -1,2 +1,3 @@
 #Heroku will ignore client folder once published
 client
+nodemon.json
