@@ -3,7 +3,7 @@ import appRoutes from './app/controllers';
 import orm, {config} from './app/db/WaterLineOrm';
 import path from 'path';
 
-let {SERVER_PORT} = process.env;
+let {PORT} = process.env;
 
 
 // Setting routes
@@ -20,14 +20,14 @@ orm.initialize(config, function(err, models) {
   app.models = models.collections;
   app.connections = models.connections;
   // Start Server
-  app.listen(SERVER_PORT);
+  app.listen(PORT);
 
 // Stormpath will let you know when it's ready to start authenticating users.
 // app.on('stormpath.ready', function () {
 //   console.log('Stormpath Ready!');
 // });
 
-  console.log(`Server listening on port ${SERVER_PORT}`)
+  console.log(`Server listening on port ${PORT}`)
   console.log("Waterline initialized!");
 });
 
